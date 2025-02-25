@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import DefaultLayout from './layouts/DefaultLayout'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
@@ -14,9 +15,11 @@ function App() {
 
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/chisiamo' element={<ChiSiamo />} />
-        <Route path='/listapost' element={<ListaPost />} />
+        <Route element={<DefaultLayout />} >
+          <Route path='/' element={<HomePage />} />
+          <Route path='/chisiamo' element={<ChiSiamo />} />
+          <Route path='/listapost' element={<ListaPost />} />
+        </Route>
       </Routes>
     </BrowserRouter>
 
